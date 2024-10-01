@@ -165,5 +165,47 @@ Instead of tables, NoSQL databases use more flexible data models, such as:
 * **Not well-suited for complex transactions or querying relationships between data**.
 
 
-# SQLVS NOSQL
+# SQL VS NOSQL
 ![image](https://github.com/user-attachments/assets/2bdc071b-b456-4a95-8a41-f88c00a27fae)
+
+
+
+# Database Security: Common Threats and Challenges
+
+## Overview
+
+Many software misconfigurations, vulnerabilities, or patterns of carelessness or misuse can result in breaches. The following are among the most common types or causes of database security attacks.
+
+## Common Database Security Threats
+
+### Insider Threats
+
+An insider threat is a security threat from any one of three sources with privileged access to the database:
+
+* A malicious insider who intends to do harm.
+* A negligent insider who makes errors that make the database vulnerable to attack.
+* An infiltrator, an outsider who somehow obtains credentials via a scheme, such as phishing or by gaining access to the credential database itself.
+
+### Human Error
+
+Accidents, weak passwords, password sharing, and other unwise or uninformed user behaviors continue to be the cause of nearly half (49%) of all reported data breaches.
+
+### Exploitation of Database Software Vulnerabilities
+
+Hackers make their living by finding and targeting vulnerabilities in all kinds of software, including database management software. All major commercial database software vendors and open source database management platforms issue regular security patches to address these vulnerabilities, but failure to apply these patches in a timely fashion can increase your exposure.
+
+### SQL or NoSQL Injection Attacks
+
+A database-specific threat, these involve the insertion of arbitrary SQL or non-SQL attack strings into database queries that are served by web applications or HTTP headers. Organizations that don’t follow secure web application coding practices and perform regular vulnerability testing are open to these attacks.
+
+### Buffer Overflow Exploitation
+
+Buffer overflow occurs when a process attempts to write more data to a fixed-length block of memory than it is allowed to hold. Attackers can use the excess data, which is stored in adjacent memory addresses, as a foundation from which to start attacks.
+
+### Malware
+
+Malware is software that is written specifically to take advantage of vulnerabilities or otherwise cause damage to the database. Malware can arrive via any endpoint device connecting to the database’s network.
+
+### Attacks on Backups
+
+Organizations that fail to protect backup data with the same stringent controls that are used to protect the database itself can be vulnerable to attacks on backups.
