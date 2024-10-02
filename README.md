@@ -459,3 +459,9 @@ There are two hashing methods you can use in a DBMS:
 * **Summary:** A SQL injection vulnerability in the poll component in SkySystem Arfa-CMS before 5.1.3124 allows remote attackers to execute arbitrary SQL
 
 Source : https://www.cvedetails.com/vulnerability-list/opsqli-1/sql-injection.html
+# Researches
+https://www.researchgate.net/publication/235992242_Database_Security_and_Encryption_A_Survey_Study
+
+https://www.researchgate.net/publication/356421044_A_Review_of_Database_Security_Concepts_Risks_and_Problems
+
+https://www.ijser.org/researchpaper/Database-Security--Attacks-and-Techniques.pdf
