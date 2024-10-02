@@ -375,3 +375,87 @@ There are two hashing methods you can use in a DBMS:
 * High-performance database applications
 * Real-time data processing and analytics systems
 * Distributed database systems
+
+**Here some recent Security Vulnerabilities, CVEs (Sql injection)**
+
+**SQL Injection Vulnerabilities**
+=====================================
+
+### CVE-2024-47062
+* **Published:** 2024-09-20
+* **Last Update:** 2024-09-26
+* **Max CVSS Base Score:** 9.4
+* **EPSS Score:** 0.05%
+* **Summary:** Navidrome is vulnerable to SQL injection due to improper parameter handling, allowing attackers to access information and inject arbitrary SQL code.
+
+### CVE-2024-46626
+* **Published:** 2024-10-02
+* **Last Update:** 2024-10-02
+* **Max CVSS Base Score:** N/A
+* **EPSS Score:** N/A
+* **Summary:** OS4ED openSIS-Classic v9.1 contains a SQL injection vulnerability via a crafted payload.
+
+### CVE-2024-46510
+* **Published:** 2024-09-30
+* **Last Update:** 2024-09-30
+* **Max CVSS Base Score:** 7.6
+* **EPSS Score:** 0.04%
+* **Summary:** ESAFENET CDG v5 contains a SQL injection vulnerability via the id parameter in the NavigationAjax interface.
+
+### CVE-2024-46472
+* **Published:** 2024-09-27
+* **Last Update:** 2024-09-30
+* **Max CVSS Base Score:** 8.6
+* **EPSS Score:** 0.04%
+* **Summary:** CodeAstro Membership Management System 1.0 is vulnerable to SQL Injection via the parameter 'email' in the Login Page.
+
+### CVE-2024-46382
+* **Published:** 2024-09-19
+* **Last Update:** 2024-09-25
+* **Max CVSS Base Score:** 7.5
+* **EPSS Score:** 0.08%
+* **Summary:** A SQL injection vulnerability in linlinjava litemall 1.8.0 allows a remote attacker to obtain sensitive information via the goodsId, goodsSn, and name parameters in AdminGoodscontroller.java.
+
+### CVE-2024-46374
+* **Published:** 2024-09-18
+* **Last Update:** 2024-09-20
+* **Max CVSS Base Score:** 9.8
+* **EPSS Score:** 0.04%
+* **Summary:** Best House Rental Management System 1.0 contains a SQL injection vulnerability in the delete_category() function of the file rental/admin_class.php.
+
+### CVE-2024-46103
+* **Published:** 2024-09-20
+* **Last Update:** 2024-09-26
+* **Max CVSS Base Score:** 9.8
+* **EPSS Score:** 0.04%
+* **Summary:** SEMCMS 4.8 is vulnerable to SQL Injection via SEMCMS_Main.php.
+
+### CVE-2024-45999
+* **Published:** 2024-10-01
+* **Last Update:** 2024-10-01
+* **Max CVSS Base Score:** N/A
+* **EPSS Score:** 0.04%
+* **Summary:** A SQL Injection vulnerability was discovered in Cloudlog 2.6.15, specifically within the get_station_info() function located in the file /application/models/Oqrs_model.php.
+
+### CVE-2024-45771
+* **Published:** 2024-09-06
+* **Last Update:** 2024-09-09
+* **Max CVSS Base Score:** 9.8
+* **EPSS Score:** 0.04%
+* **Summary:** RapidCMS v1.3.1 was discovered to contain a SQL injection vulnerability via the password parameter at /resource/runlogin.php.
+
+### CVE-2024-45622
+* **Published:** 2024-09-02
+* **Last Update:** 2024-09-03
+* **Max CVSS Base Score:** 9.8
+* **EPSS Score:** 0.05%
+* **Summary:** ASIS (aka Aplikasi Sistem Sekolah using CodeIgniter 3) 3.0.0 through 3.2.0 allows index.php username SQL injection for Authentication Bypass.
+
+### CVE-2024-45265
+* **Published:** 2024-08-26
+* **Last Update:** 2024-09-05
+* **Max CVSS Base Score:** 9.8
+* **EPSS Score:** 0.09%
+* **Summary:** A SQL injection vulnerability in the poll component in SkySystem Arfa-CMS before 5.1.3124 allows remote attackers to execute arbitrary SQL
+
+Source : https://www.cvedetails.com/vulnerability-list/opsqli-1/sql-injection.html
