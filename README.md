@@ -209,3 +209,169 @@ Malware is software that is written specifically to take advantage of vulnerabil
 ### Attacks on Backups
 
 Organizations that fail to protect backup data with the same stringent controls that are used to protect the database itself can be vulnerable to attacks on backups.
+
+# SQL or NoSQL Injection Attacks
+### What is SQL injection (SQLi)?
+SQL injection (SQLi) is a web security vulnerability that allows an attacker to interfere with the queries that an application makes to its database. This can allow an attacker to view data that they are not normally able to retrieve. This might include data that belongs to other users, or any other data that the application can access. In many cases, an attacker can modify or delete this data, causing persistent changes to the application's content or behavior.
+
+### What is the impact of a successful SQL injection attack?
+A successful SQL injection attack can result in unauthorized access to sensitive data, such as:
+
+**Passwords.**
+**Credit card details.**
+**Personal user information.**
+
+SQL injection attacks have been used in many high-profile data breaches over the years. These have caused reputational damage and regulatory fines. In some cases, an attacker can obtain a persistent backdoor into an organization's systems, leading to a long-term compromise that can go unnoticed for an extended period.
+
+### SQL injection examples
+There are lots of SQL injection vulnerabilities, attacks, and techniques, that occur in different situations. Some common SQL injection examples include:
+
+- Retrieving hidden data, where you can modify a SQL query to return additional results.
+- Subverting application logic, where you can change a query to interfere with the application's logic.
+- UNION attacks, where you can retrieve data from different database tables.
+- Blind SQL injection, where the results of a query you control are not returned in the application's responses.
+
+### How to prevent SQL injection
+You can prevent most instances of SQL injection using parameterized queries instead of string concatenation within the query. These parameterized queries are also know as "prepared statements".
+
+The following code is vulnerable to SQL injection because the user input is concatenated directly into the query:
+
+```
+String query = "SELECT * FROM products WHERE category = '"+ input + "'";
+Statement statement = connection.createStatement();
+ResultSet resultSet = statement.executeQuery(query);
+```
+You can rewrite this code in a way that prevents the user input from interfering with the query structure:
+
+```
+PreparedStatement statement = connection.prepareStatement("SELECT * FROM products WHERE category = ?");
+statement.setString(1, input);
+ResultSet resultSet = statement.executeQuery();
+```
+You can use parameterized queries for any situation where untrusted input appears as data within the query, including the WHERE clause and values in an INSERT or UPDATE statement. They can't be used to handle untrusted input in other parts of the query, such as table or column names, or the ORDER BY clause. Application functionality that places untrusted data into these parts of the query needs to take a different approach, such as:
+
+- Whitelisting permitted input values.
+- Using different logic to deliver the required behavior.
+
+For a parameterized query to be effective in preventing SQL injection, the string that is used in the query must always be a hard-coded constant. It must never contain any variable data from any origin. Do not be tempted to decide case-by-case whether an item of data is trusted, and continue using string concatenation within the query for cases that are considered safe. It's easy to make mistakes about the possible origin of data, or for changes in other code to taint trusted data.
+
+
+# What is Data Encryption?
+
+Encryption in cyber security is the conversion of data from a readable format into an encoded format. Encrypted data can only be read or processed after it's been decrypted.
+
+###  How does encryption work?
+When information or data is shared over the internet, it goes through a series of network devices worldwide, which form part of the public internet. As data travels through the public internet, there is a chance it could be compromised or stolen by hackers. To prevent this, users can install specific software or hardware to ensure the secure transfer of data or information. These processes are known as encryption in network security.
+
+## Common Encryption Techniques
+
+Encryption is the process of converting plaintext into ciphertext, making it unreadable to unauthorized parties. There are two primary methods:
+
+### Symmetric Encryption
+* **Same key for encryption and decryption:** This means both the sender and receiver use the same secret key to encrypt and decrypt data.
+* **Advantages:** Fast and efficient.
+* **Disadvantages:** Secure key distribution is a challenge. If the key is compromised, the entire communication is compromised.
+
+**Examples:**
+* **DES (Data Encryption Standard):** An outdated symmetric algorithm.
+* **3DES (Triple Data Encryption Standard):** A more secure version of DES, but also becoming outdated.
+* **AES (Advanced Encryption Standard):** The current standard for symmetric encryption, known for its strength and efficiency.
+
+### Asymmetric Encryption
+* **Different keys for encryption and decryption:** A public key is used for encryption, and a private key is used for decryption.
+* **Advantages:** Secure key distribution, as the public key can be shared publicly.
+* **Disadvantages:** Slower than symmetric encryption.
+
+**Examples:**
+* **RSA (Rivest-Shamir-Adleman):** One of the most widely used asymmetric algorithms.
+* **ECC (Elliptic Curve Cryptography):** A newer algorithm that offers similar security to RSA but with smaller key sizes.
+
+### Hybrid Encryption
+* **Combination of symmetric and asymmetric:** A symmetric key is used for encrypting the actual data, and an asymmetric key is used to encrypt the symmetric key. This provides the speed of symmetric encryption with the security of asymmetric encryption.
+
+### Other Encryption Techniques
+* **Hashing:** Creates a fixed-size digital fingerprint of data. While not technically encryption, it can be used for data integrity verification.
+* **Steganography:** Hides data within other data, making it difficult to detect that encryption is taking place.
+
+**Choosing the right encryption technique depends on factors such as:**
+* **Security requirements:** How sensitive is the data?
+* **Performance needs:** How fast does the encryption need to be?
+* **Key management:** How will the keys be distributed and managed?
+
+By understanding these techniques, you can make informed decisions about protecting your data.
+
+
+## What is hashing?
+Hashing is the process of converting data — text, numbers, files, or anything, really — into a fixed-length string of letters and numbers. Data is converted into these fixed-length strings, or hash values, by using a special algorithm called a hash function.
+
+
+![image](https://github.com/user-attachments/assets/713fc466-208d-4356-acb6-2a4c83dc963d)
+
+
+### What Are Hashing Algorithms Used For?
+- **Password storage:** Hashing is used to store passwords securely by converting them into a scrambled format, making it difficult for hackers to steal them.
+- **Digital signatures:** Hashing is used to create digital signatures, which can be used to verify the authenticity and integrity of a message or document.
+- **Document management:** Hashing can be used to authenticate data by generating a hash value that can be compared to the original to determine if the document has been modified.
+- **File management:** Hashing can be used to index data, identify files, and delete duplicates, saving time and resources.
+
+### Hashing Algorithm Examples 
+It may be hard to understand just what these specialized programs do without seeing them in action. 
+
+Imagine that we'd like to hash the answer to a security question. We've asked, "Where was your first home?" The answer we're given is, "At the top of an apartment building in Queens." Here's how the hashes look with:
+
+**MD5: 72b003ba1a806c3f94026568ad5c5933**
+
+
+**SHA-256: f6bf870a2a5bb6d26ddbeda8e903f3867f729785a36f89bfae896776777d50af**
+
+Now, imagine that we've asked the same question of a different person, and her response is, "Chicago." Here's how hashes look with:
+
+**MD-5: 9cfa1e69f507d007a516eb3e9f5074e2**
+
+
+**SHA-256: 0f5d983d203189bbffc5f686d01f6680bc6a83718a515fe42639347efc92478e**
+
+
+Notice that the original messages don't have the same number of characters. But the algorithms produce hashes of a consistent length each time. 
+
+And notice that the hashes are completely garbled. It's nearly impossible to understand what they say and how they work. 
+
+Database Management with Hashing
+================================
+
+Hashing can greatly simplify the process of searching for data in large databases. Instead of relying on index structures, hashing allows you to search for a data record using a search key and hash function.
+
+### How Hashing Works in Database Management
+
+Hash files store data in **buckets**, and each bucket can hold multiple **records**. Hash functions are used to map **search keys** to the location of a record within a bucket.
+
+### Hashing Methods in Database Management Systems (DBMS)
+
+There are two hashing methods you can use in a DBMS:
+
+#### 1. Static Hashing
+
+* A search key and hash function always lead to the same address.
+* The number of buckets remains fixed.
+* When adding a new record, a hash key is used to automatically generate an address for the record and store it.
+* The same key is used to locate the record when accessing, updating, or deleting it.
+
+#### 2. Dynamic Hashing (Extendible Hashing)
+
+* Allows for data buckets to be created and removed as needed.
+* Prevents bucket overflow, which occurs when a bucket doesn’t have enough space for a new record.
+* Provides more flexibility and scalability than static hashing.
+
+### Benefits of Hashing in Database Management
+
+* Faster search times
+* Improved data retrieval efficiency
+* Reduced storage requirements
+* Simplified data management and maintenance
+
+### Use Cases for Hashing in Database Management
+
+* Large-scale data storage and retrieval systems
+* High-performance database applications
+* Real-time data processing and analytics systems
+* Distributed database systems
